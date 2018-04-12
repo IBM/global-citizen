@@ -1,0 +1,23 @@
+{
+  "name": "global-citizens-network",
+  "version": "0.0.1",
+  "description": "This pattern should be able to Construct a 3-member blockchain application using the IBM Blockchain Platform, consisting of the following entities: an organization representing a government entity, an organization representing an NGO focused on the provision of aid, and an organization representing Global Citizen.",
+  "scripts": {
+    "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/global-citizens-network.bna",
+    "test": "mocha --recursive"
+  },
+  "author": "Sample",
+  "email": "sample",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "composer-admin": "latest",
+    "composer-client": "latest",
+    "composer-common": "latest",
+    "composer-connector-embedded": "latest",
+    "chai": "latest",
+    "eslint": "latest",
+    "istanbul": "latest",
+    "mkdirp": "latest",
+    "mocha": "latest"
+  }
+}
