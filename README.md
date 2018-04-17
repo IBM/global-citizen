@@ -128,10 +128,10 @@ Please follow the instructions as shown in the images below:
 Click on `Use Now` to select the `AidOrg` participant registry to perform transactions on network.
 ![](images/13.png)
 
-Submit `CreateProjectProposal` transaction.
+Submit `CreateProjectPledge` transaction.
 ```
 {
-  "$class": "org.global.citizens.net.CreateProjectProposal",
+  "$class": "org.global.citizens.net.CreateProjectPledge",
   "name": "child care",
   "decription": "child care fund",
   "fundsRequired": 100000,
@@ -140,38 +140,38 @@ Submit `CreateProjectProposal` transaction.
 ```
 ![](images/14.png)
 
-New project proposal is created in Asset Registry.
+New project pledge is created in Asset Registry.
 ![](images/15.png)
 
-Submit `SendProposalToGlobalCitizen` transaction to send the proposal to global citizen to get the funds for the project.
+Submit `SendPledgeToGlobalCitizen` transaction to send the pledge to global citizen to get the funds for the project.
 ```
 {
-  "$class": "org.global.citizens.net.SendProposalToGlobalCitizen",
+  "$class": "org.global.citizens.net.SendPledgeToGlobalCitizen",
   "citizenId": "resource:org.global.citizens.net.GlobalCitizen#gc",
-  "proposalId": "resource:org.global.citizens.net.ProjectProposal#<ProjectProposal ID>"
+  "pledgeId": "resource:org.global.citizens.net.ProjectPledge#<ProjectPledge ID>"
 }
 ```
 ![](images/16.png)
 
-Global Citizen participant registry gets update with the new proposal request.
+Global Citizen participant registry gets update with the new pledge request.
 ![](images/17.png)
 
-Global Citizen reviews the proposal. After successful verification it submits a`SendProposalToGovOrg` transaction to get funds for the project proposal from government organizations.
+Global Citizen reviews the pledge. After successful verification it submits a`SendPledgeToGovOrg` transaction to get funds for the project pledge from government organizations.
 ```
 {
-  "$class": "org.global.citizens.net.SendProposalToGovOrg",
+  "$class": "org.global.citizens.net.SendPledgeToGovOrg",
   "govOrg": ["resource:org.global.citizens.net.GovOrg#gov"],
-  "proposalId": "resource:org.global.citizens.net.ProjectProposal#<ProjectProposal ID>"
+  "pledgeId": "resource:org.global.citizens.net.ProjectPledge#<ProjectPledge ID>"
 }
 ```
 ![](images/19.png)
 
-Government organizations reviews the proposal. After reviewing if they decide to fund the project then they submit a `UpdateProposal` transaction to update the project proposal asset.
+Government organizations reviews the pledge. After reviewing if they decide to fund the project then they submit a `UpdatePledge` transaction to update the project pledge asset.
 ```
 {
-  "$class": "org.global.citizens.net.UpdateProposal",
+  "$class": "org.global.citizens.net.UpdatePledge",
   "govOrgId": "resource:org.global.citizens.net.GovOrg#gov",
-  "proposalId": "resource:org.global.citizens.net.ProjectProposal#<ProjectProposal ID>",
+  "pledgeId": "resource:org.global.citizens.net.ProjectPledge#<ProjectPledge ID>",
   "fundingType": "WEEKLY",
   "approvedFunding": 100000,
   "fundsPerInstallment": 1000
@@ -188,7 +188,7 @@ Government organizations periodically sends the funds to project by submitting `
 {
   "$class": "org.global.citizens.net.TransferFunds",
   "govOrgId": "resource:org.global.citizens.net.GovOrg#gov",
-  "proposalId": "resource:org.global.citizens.net.ProjectProposal#<ProjectProposal ID>"
+  "pledgeId": "resource:org.global.citizens.net.ProjectPledge#<ProjectPledge ID>"
 }
 ```
 ![](images/23.png)
