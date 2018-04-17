@@ -25,15 +25,15 @@ npm install -g composer-cli@0.18.1
 ## Steps
 1. [Generate the Business Network Archive (BNA)](#1-generate-the-business-network-archive-bna)
 
-2. [Test Business Network Archive using Composer Playground](#2-test-business-network-archive-usin-composer-playground)
+2. [Test Business Network Archive using Composer Playground](#2-test-business-network-archive-using-composer-playground)
 
 3. [Create Blockchain Service](#3-create-blockchain-service)
 
 4. [Get the secret](#4-get-the-secret)
 
-5. [Use secret to get certificates from the certificate authority](#5-use-secret-to-get-certificates-from-the-certificate-authority)
+5. [Use secret to get certificates from the certificate authority](#5use-secret-to-get-certificates-from-the-certificate-authority)
 
-6. [Use admin-pub.pem file to add certificates to the peers](#6-use-admin-pub.pem-file-to-add-certificates-to-the-peers)
+6. [Use admin-pub.pem file to add certificates to the peers](#6-use-admin-pubpem-file-to-add-certificates-to-the-peers)
 
 7. [Create admin business network card](#7-create-admin-business-network-card)
 
