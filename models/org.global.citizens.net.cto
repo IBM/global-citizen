@@ -34,7 +34,6 @@ concept Funding {
   o Double approvedFunding
   o Double totalFundsReceived
   o Double fundsPerInstallment
-//  o Double fundsReceivedInCurrentInstallment
   --> GovOrg govOrgId
 }
 
@@ -42,11 +41,11 @@ concept Message {
   o DateTime reminderDate
   o Double amountDue
   o MessageStatus status
-  --> ProjectProposal proposalId
+  --> ProjectPledge pledgeId
 }
 
-asset ProjectProposal identified by proposalId {
-  o String proposalId
+asset ProjectPledge identified by pledgeId {
+  o String pledgeId
   o String name
   o String decription
   o Double fundsRequired
@@ -56,13 +55,13 @@ asset ProjectProposal identified by proposalId {
 }
 
 abstract participant User {
-  --> ProjectProposal[] projectProposal
+  --> ProjectPledge[] projectPledge
 }
 
 participant GovOrg identified by govOrgId extends User {
   o String govOrgId
   o Message[] defaultMessage
-  --> ProjectProposal[] fundedProposals
+  --> ProjectPledge[] fundedPledges
 }
 
 participant AidOrg identified by aidOrgId extends User {
@@ -73,26 +72,26 @@ participant GlobalCitizen identified by citizenId extends User {
   o String citizenId
 }
 
-transaction CreateProjectProposal {
+transaction CreateProjectPledge {
   o String name
   o String decription
   o Double fundsRequired
   --> AidOrg aidOrg
 }
 
-transaction SendProposalToGlobalCitizen {
+transaction SendPledgeToGlobalCitizen {
   --> GlobalCitizen citizenId
-  --> ProjectProposal proposalId
+  --> ProjectPledge pledgeId
 }
 
-transaction SendProposalToGovOrg {
+transaction SendPledgeToGovOrg {
   --> GovOrg[] govOrg
-  --> ProjectProposal proposalId
+  --> ProjectPledge pledgeId
 }
 
-transaction UpdateProposal {
+transaction UpdatePledge {
   --> GovOrg govOrgId
-  --> ProjectProposal proposalId
+  --> ProjectPledge pledgeId
   o FundingType fundingType
   o Double approvedFunding
   o Double fundsPerInstallment
@@ -100,5 +99,5 @@ transaction UpdateProposal {
 
 transaction TransferFunds {
   --> GovOrg govOrgId
-  --> ProjectProposal proposalId
+  --> ProjectPledge pledgeId
 }
