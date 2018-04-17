@@ -298,7 +298,7 @@ composer-rest-server -c admin@global-citizens-network -n never -w true
 
 3. In your browser, go to [http://localhost:3000/explorer](http://localhost:3000/explorer)
 
-4. Now you can use the swagger api to perform operations in business network as shown in [Step 2]((#2-test-business-network-archive-usin-composer-playground))
+4. Now you can use the swagger api to perform operations in business network as shown in [Step 2](#2-test-business-network-archive-using-composer-playground)
 
 ## Extending Pattern
 
