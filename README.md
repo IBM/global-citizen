@@ -164,7 +164,7 @@ Global Citizen reviews the pledge. After successful verification it submits a`Se
   "pledgeId": "resource:org.global.citizens.net.ProjectPledge#<ProjectPledge ID>"
 }
 ```
-![](images/19.png)
+![](images/18.png)
 
 Government organizations reviews the pledge. After reviewing if they decide to fund the project then they submit a `UpdatePledge` transaction to update the project pledge asset.
 ```
@@ -177,11 +177,11 @@ Government organizations reviews the pledge. After reviewing if they decide to f
   "fundsPerInstallment": 1000
 }
 ```
+![](images/19.png)
+
 ![](images/20.png)
 
 ![](images/21.png)
-
-![](images/22.png)
 
 Government organizations periodically sends the funds to project by submitting `TransferFunds` transaction.
 ```
@@ -191,9 +191,9 @@ Government organizations periodically sends the funds to project by submitting `
   "pledgeId": "resource:org.global.citizens.net.ProjectPledge#<ProjectPledge ID>"
 }
 ```
-![](images/23.png)
+![](images/22.png)
 
-![](images/24.png)
+![](images/23.png)
 
 ## 3. Create Blockchain Service
 
