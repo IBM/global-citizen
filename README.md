@@ -173,7 +173,7 @@ composer card import -f ./admin@global-citizens-network.card
 
 ## 9. Interact with the business network
 
-You can use either composer-playground or composer-rest-server to interact with the business network.
+You can either use composer-playground or composer-rest-server to interact with the business network.
 
 ### a. Interact using Composer-Playground
 
