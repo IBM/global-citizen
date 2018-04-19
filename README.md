@@ -29,7 +29,7 @@ npm install -g composer-cli@0.18.1
 
 3. [Get the secret](#3-get-the-secret)
 
-4. [Use secret to get certificates from the certificate authority](#4use-secret-to-get-certificates-from-the-certificate-authority)
+4. [Use secret to get certificates from the certificate authority](#4-use-secret-to-get-certificates-from-the-certificate-authority)
 
 5. [Use admin-pub.pem file to add certificates to the peers](#5-use-admin-pubpem-file-to-add-certificates-to-the-peers)
 
@@ -77,7 +77,7 @@ Command succeeded
 
 Now you should have a BNA file, (global-citizens-network.bna), that is in your `global-citizens/dist` directory.
 
-## 3. Create Blockchain Service
+## 2. Create Blockchain Service
 
 1. In your browser go to your shiny new [IBM Cloud account](https://console.bluemix.net/dashboard/apps)
 
@@ -303,7 +303,7 @@ composer-rest-server -c admin@global-citizens-network -n never -w true
 
 3. In your browser, go to [http://localhost:3000/explorer](http://localhost:3000/explorer)
 
-4. Now you can use the swagger api to perform operations in business network as shown in `Interact using Composer-Playground`
+4. Now you can use the swagger api to perform operations in business network as shown in [Interact using Composer-Playground](#a-interact-using-composer-playground)
 
 ## Extending Pattern
 
