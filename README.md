@@ -2,6 +2,8 @@
 
 The goal here is to build a 3-member blockchain application using the IBM Blockchain Platform, consisting of the following entities: an organization representing a government entity, an organization representing an NGO focused on the provision of aid, and an organization representing Global Citizen.
 
+Audience level : Intermediate Developers
+
 ## Prerequisites
 
 1. Free [IBM Cloud account](https://www.ibm.com/cloud/)
@@ -43,13 +45,14 @@ npm install -g composer-cli@0.18.1
 
 ## 1. Generate the Business Network Archive (BNA)
 
-First we need to clone a repo that contains the three components that are needed to make a BNA file: a logic file(**.js**) , a model file(**.cto**), and an access control(**.acl**) file. To check that the structure of the files is valid, you can now generate a Business Network Archive (BNA) file for your business network definition. The BNA file is the deployable unit -- a file that can be deployed to the Composer runtime for execution.
+A business network is made up of assets, participants, transactions, access control rules, and optionally events and queries. In this skeleton business network, there is a model (**.cto**) file which will contain the class definitions for all assets, participants, and transactions in the business network. The skeleton business network also contains an access control (**permissions.acl**) document with basic access control rules, a script (**logic.js**) file containing transaction processor functions, and a **package.json** file containing business network metadata.
 
-Clone the repo which has these three files, and a fully functioning business network
+First we need to clone a repo that contains the three components that are needed to make a BNA file: a logic file(**.js**) , a model file(**.cto**), and an access control(**.acl**) file.
 ```bash
 git clone https://github.com/IBM/global-citizen.git
 ```
 
+To check that the structure of the files is valid, you can now generate a Business Network Archive (BNA) file for your business network definition. The BNA file is the deployable unit -- a file that can be deployed to the Composer runtime for execution.
 Use the following command to generate the network archive:
 ```bash
 cd global-citizen
@@ -88,23 +91,23 @@ Now you should have a BNA file, (global-citizens-network.bna), that is in your `
 
 1. Launch your blockchain service, and click on connection profile, and view as raw JSON
 
-2. Scroll all the way down until you see `registrar` and then under `enrollId` will be `enrollSecret`. Copy this secret, we will need it for the next step
+2. Scroll all the way down until you see `registrar` and then under `enrollId` will be `enrollSecret`. Copy this secret, we will need it for the next step for creating the a business network card for the certificate authority (CA)
 ![](images/connection.gif)
 
 ## 4. Use secret to get certificates from the certificate authority
 
-1. Go back and instead of viewing as raw JSON, download the connection profile.
+1. Download the connection profile
 
 2. Rename the downloaded JSON file to `connection-profile.json`
 
-3. Move the connection-profile.json file to the `global-citizen` directory
+3. Move the `connection-profile.json` file to the `global-citizen` directory
 
-4. Using the `enrollSecret` from the previous step issue this command to create a business network card for the certificate authority (CA).
+4. Using the `enrollSecret` from the previous step issue this command to create a business network card for the certificate authority (CA)
 ```bash
 composer card create -f ca.card -p connection-profile.json -u admin -s <enrollSecret>
 ```
 
-5. Import the card with this command
+5. Import the card in your local system wallet with this command
 ```bash
 composer card import -f ca.card -n ca
 ```
@@ -142,7 +145,7 @@ composer card import -f adminCard.card -n adminCard
 cp ./dist/global-citizens-network.bna .
 ```
 
-2. Now we will use the admin card from the previous step to install the runtime with the following command:
+2. Now we will use the admin card to install the runtime with the following command:
 ```bash
 composer runtime install -c adminCard -n global-citizens-network
 ```
