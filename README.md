@@ -178,6 +178,8 @@ composer card import -f ./admin@global-citizens-network.card
 
 You can either use composer-playground or composer-rest-server to interact with the business network.
 
+Use the links to get more information about [composer-playground](https://hyperledger.github.io/composer/latest/introduction/introduction) and [composer-rest-server](https://hyperledger.github.io/composer/latest/integrating/getting-started-rest-api).
+
 ### a. Interact using Composer-Playground
 
 1. Install Composer-Playground:
