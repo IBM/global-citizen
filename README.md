@@ -21,7 +21,7 @@ rm -rf credentials/
 
 4. Install composer-cli
 ```bash
-npm install -g composer-cli@0.18.1
+npm install -g composer-cli@0.19.4
 ```
 
 ## Steps
@@ -184,7 +184,7 @@ Use the links to get more information about [composer-playground](https://hyperl
 
 1. Install Composer-Playground:
 ```bash
-npm install -g composer-playground@0.18.1
+npm install -g composer-playground@0.19.5
 ```
 2. Now, let’s start up the server. Make sure you are in the same directory as your `connection-profile.json`
 ```bash
@@ -298,7 +298,7 @@ Government organizations periodically sends the funds to project by submitting `
 
 1. Install the composer-rest-server:
 ```bash
-npm install -g composer-rest-server@0.18.1
+npm install -g composer-rest-server@0.19.5
 ```
 
 2. Now, let’s start up the server. Make sure you are in the same directory as your `connection-profile.json`
