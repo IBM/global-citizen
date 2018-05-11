@@ -21,7 +21,7 @@ rm -rf credentials/
 
 4. Install composer-cli
 ```bash
-npm install -g composer-cli@0.19.4
+npm install -g composer-cli@0.19.5
 ```
 
 ## Steps
