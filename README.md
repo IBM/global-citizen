@@ -73,7 +73,7 @@ Found:
 	Identifier: global-citizens-network@0.0.1
 
 Written Business Network Definition Archive file to
-Output file: ./dist/global-citizens-network.bna
+Output file: global-citizens-network@0.0.1.bna
 
 Command succeeded
 ```
@@ -109,7 +109,7 @@ composer card create -f ca.card -p connection-profile.json -u admin -s <enrollSe
 
 5. Import the card in your local system wallet with this command
 ```bash
-composer card import -f ca.card -n ca
+composer card import -f ca.card -c ca
 ```
 
 6. Finally, we request certificates from the CA using the card we imported that contains our `enrollSecret`. The certificates are stored in the credentials directory that is created after the completion of this command.
@@ -135,29 +135,25 @@ composer card create -f adminCard.card -p connection-profile.json -u admin -c ./
 
 2. Import the card created from the previous command:
 ```bash
-composer card import -f adminCard.card -n adminCard
+composer card import -f adminCard.card -c adminCard
 ```
 
 ## 7. Install runtime and start the network
 
-1. Copy and paste the global-citizens-network.bna file to the `global-citizen` directory.
-```bash
-cp ./dist/global-citizens-network.bna .
-```
 
-2. Now we will use the admin card to install the runtime with the following command:
+1. Now we will use the admin card to install the network with the following command:
 ```bash
-composer runtime install -c adminCard -n global-citizens-network
+composer network install --card adminCard --archiveFile global-citizens-network@0.0.1.bna
 ```
 >Note: If you get an error at this point, wait a minute and try again.
 
-3. Start the business network by providing the admin card, the path to the .bna file, and the credentials received from the CA. This command will issue a card which we will remove, called ‘delete_me.card’.
+2. Start the business network by providing the admin card, the path to the .bna file, and the credentials received from the CA. This command will issue a card which we will remove, called ‘delete_me.card’.
 ```bash
-composer network start -c adminCard -a global-citizens-network.bna -A admin -C ./credentials/admin-pub.pem -f delete_me.card
+composer network start --networkName global-citizens-network --networkVersion 0.0.1 -c adminCard -A admin -C ./credentials/admin-pub.pem -f delete_me.card
 ```
 >Note: If you get an error at this point, wait a minute and try again.
 
-4. Next, let’s delete delete_me.card :
+3. Next, let’s delete delete_me.card :
 ```bash
 rm delete_me.card
 ```
@@ -171,7 +167,12 @@ composer card create -n global-citizens-network -p connection-profile.json -u ad
 
 2. Import the business network card:
 ```bash
-composer card import -f ./admin@global-citizens-network.card
+composer card import -f admin@global-citizens-network.card
+```
+
+3. Test the business network card:
+```bash
+composer network ping -c admin@global-citizens-network
 ```
 
 ## 9. Interact with the business network
