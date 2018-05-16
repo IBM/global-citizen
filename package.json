@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "The goal of this pattern is to build a 3-member blockchain application using the IBM Blockchain Platform, consisting of the following entities: an organization representing a government entity, an organization representing Global Citizen(i.e. NGO ) focused on the provision of aid, and  an organization representing Aid organization receiving the funds from governments for the humanitarian causes",
   "scripts": {
-    "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/global-citizens-network.bna",
+    "prepublish": "composer archive create -t dir -n .",
     "test": "mocha --recursive"
   },
   "author": "Sample",
@@ -19,5 +19,6 @@
     "istanbul": "latest",
     "mkdirp": "latest",
     "mocha": "latest"
-  }
+  },
+  "dependencies": {}
 }
