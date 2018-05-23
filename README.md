@@ -321,7 +321,7 @@ composer-rest-server -c admin@global-citizens-network -n never -w true
 
 ## Additional Resources
 * [Hyperledger Fabric Docs](http://hyperledger-fabric.readthedocs.io/en/latest/)
-* [Hyperledger Composer Docs](https://hyperledger.github.io/composer/introduction/introduction.html)
+* [Hyperledger Composer Docs](https://hyperledger.github.io/composer/latest/introduction/introduction.html)
 
 ## License
 [Apache 2.0](LICENSE)
