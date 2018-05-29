@@ -232,6 +232,7 @@ Submit `CreateProjectPledge` transaction.
 ```
 {
   "$class": "org.global.citizens.net.CreateProjectPledge",
+  "pledgeId": "p1",
   "name": "child care",
   "decription": "child care fund",
   "fundsRequired": 100000,
@@ -248,7 +249,7 @@ Submit `SendPledgeToGlobalCitizen` transaction to send the pledge to global citi
 {
   "$class": "org.global.citizens.net.SendPledgeToGlobalCitizen",
   "citizenId": "resource:org.global.citizens.net.GlobalCitizen#gc",
-  "pledgeId": "resource:org.global.citizens.net.ProjectPledge#<ProjectPledge ID>"
+  "pledgeId": "resource:org.global.citizens.net.ProjectPledge#p1"
 }
 ```
 ![](images/16.png)
@@ -261,7 +262,7 @@ Global Citizen reviews the pledge. After successful verification it submits a`Se
 {
   "$class": "org.global.citizens.net.SendPledgeToGovOrg",
   "govOrg": ["resource:org.global.citizens.net.GovOrg#gov"],
-  "pledgeId": "resource:org.global.citizens.net.ProjectPledge#<ProjectPledge ID>"
+  "pledgeId": "resource:org.global.citizens.net.ProjectPledge#p1"
 }
 ```
 ![](images/18.png)
@@ -271,7 +272,7 @@ Government organizations reviews the pledge. After reviewing if they decide to f
 {
   "$class": "org.global.citizens.net.UpdatePledge",
   "govOrgId": "resource:org.global.citizens.net.GovOrg#gov",
-  "pledgeId": "resource:org.global.citizens.net.ProjectPledge#<ProjectPledge ID>",
+  "pledgeId": "resource:org.global.citizens.net.ProjectPledge#p1",
   "fundingType": "WEEKLY",
   "approvedFunding": 100000,
   "fundsPerInstallment": 1000
@@ -288,7 +289,7 @@ Government organizations periodically sends the funds to project by submitting `
 {
   "$class": "org.global.citizens.net.TransferFunds",
   "govOrgId": "resource:org.global.citizens.net.GovOrg#gov",
-  "pledgeId": "resource:org.global.citizens.net.ProjectPledge#<ProjectPledge ID>"
+  "pledgeId": "resource:org.global.citizens.net.ProjectPledge#p1"
 }
 ```
 ![](images/22.png)

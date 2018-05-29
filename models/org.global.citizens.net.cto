@@ -28,9 +28,8 @@ enum MessageStatus{
 }
 
 concept Funding {
-  o FundingType fundingType
-  o DateTime lastFundsReceived
-  o DateTime nextFundingDueDate
+  o FundingType fundingType  
+  o Integer nextFundingDueInDays
   o Double approvedFunding
   o Double totalFundsReceived
   o Double fundsPerInstallment
@@ -38,7 +37,6 @@ concept Funding {
 }
 
 concept Message {
-  o DateTime reminderDate
   o Double amountDue
   o MessageStatus status
   --> ProjectPledge pledgeId
@@ -73,6 +71,7 @@ participant GlobalCitizen identified by citizenId extends User {
 }
 
 transaction CreateProjectPledge {
+  o String pledgeId
   o String name
   o String decription
   o Double fundsRequired
