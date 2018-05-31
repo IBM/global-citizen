@@ -36,12 +36,6 @@ concept Funding {
   --> GovOrg govOrgId
 }
 
-concept Message {
-  o Double amountDue
-  o MessageStatus status
-  --> ProjectPledge pledgeId
-}
-
 asset ProjectPledge identified by pledgeId {
   o String pledgeId
   o String name
@@ -58,7 +52,6 @@ abstract participant User {
 
 participant GovOrg identified by govOrgId extends User {
   o String govOrgId
-  o Message[] defaultMessage
   --> ProjectPledge[] fundedPledges
 }
 
