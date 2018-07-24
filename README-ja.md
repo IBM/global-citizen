@@ -65,7 +65,7 @@ git clone https://github.com/IBM/global-citizen.git
 ```
 
 ファイルの構造が有効であることを確認するために、Business Network 定義のための Business Network Archive (BNA) ファイルを生成できます。
-BNAファイルは、デプロイ可能なユニットで、実行のために Composer ランタイムにデプロイできるファイルできます。
+BNAファイルは、デプロイ可能なユニットで、実行のために Composer ランタイムにデプロイできるファイルです。
 Network Archive を生成するには、次のコマンドを使用します:
 ```bash
 cd global-citizen
@@ -153,7 +153,7 @@ composer identity request --card ca --path ./credentials
 composer card create -f adminCard.card -p connection-profile.json -u admin -c ./credentials/admin-pub.pem -k ./credentials/admin-priv.pem --role PeerAdmin --role ChannelAdmin
 ```
 
-2. 前のコマンドで作成したカードをインポートする:
+2. 前のコマンドで作成したカードをインポートします:
 ```bash
 composer card import -f adminCard.card -c adminCard
 ```
