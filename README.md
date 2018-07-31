@@ -1,4 +1,4 @@
-*Read this in other languages: [日本語](README-ja.md).*
+*Read this in other languages: [한국어](README-ko.md), [日本語](README-ja.md).*
 
 # Global-citizen
 
