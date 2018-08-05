@@ -119,7 +119,7 @@ composer card import -f ca.card -c ca
 composer identity request --card ca --path ./credentials
 ```
 
-## 5. admin-pub.pem 파일 사용하여 피어에 인증서 추가하기
+## 5. admin-pub.pem 파일을 사용하여 피어에 인증서 추가하기
 
 1. 다시 블록체인 서비스로 돌아와서 Members 탭을 클릭하여 인증서를 추가합니다. `global-citizen/credentials` 디렉토리로 가서 `admin-pub.pem`의 내용을 복사하여 인증서 박스에 붙여 넣습니다. 인증서를 제출하고 피어를 다시 시작합니다.
 ![](images/admin-pub.gif)
