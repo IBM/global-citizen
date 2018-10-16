@@ -20,5 +20,7 @@
     "mkdirp": "latest",
     "mocha": "latest"
   },
-  "dependencies": {}
+  "dependencies": {
+    "composer-cli": "^0.20.2"
+  }
 }
