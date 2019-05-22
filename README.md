@@ -1,5 +1,12 @@
 *Read this in other languages: [한국어](README-ko.md), [日本語](README-ja.md).*
 
+# WARNING: This repository is no longer maintained :warning:
+
+> This repository, which contains assets to run a Hyperledger Composer application,
+is not being actively maintained due to a shift to focus on Hyperledger Fabric.
+This repository will not be updated. The repository will be kept available 
+in read-only mode. 
+
 # Global-citizen
 
 The goal here is to build a 3-member blockchain application using the IBM Blockchain Platform, consisting of the following entities: an organization representing a government entity, an organization representing an NGO focused on the provision of aid, and an organization representing Global Citizen.
