@@ -56,7 +56,7 @@ npm install -g composer-cli@0.20
 
 A business network is made up of assets, participants, transactions, access control rules, and optionally events and queries. In this skeleton business network, there is a model (**.cto**) file which will contain the class definitions for all assets, participants, and transactions in the business network. The skeleton business network also contains an access control (**permissions.acl**) document with basic access control rules, a script (**logic.js**) file containing transaction processor functions, and a **package.json** file containing business network metadata.
 
-First we need to clone a repo that contains the three components that are needed to make a BNA file: a logic file(**.js**) , a model file(**.cto**), and an access control(**.acl**) file.
+First we need to clone a repo that contains the three components that are needed to make a BNA file: a logic file (**.js**) , a model file (**.cto**), and an access control (**.acl**) file.
 ```bash
 git clone https://github.com/IBM/global-citizen.git
 ```
@@ -100,7 +100,7 @@ Now you should have a BNA file, (global-citizens-network.bna), that is in your `
 
 1. Launch your blockchain service, and click on connection profile, and view as raw JSON
 
-2. Scroll all the way down until you see `registrar` and then under `enrollId` will be `enrollSecret`. Copy this secret, we will need it for the next step for creating the a business network card for the certificate authority (CA)
+2. Scroll all the way down until you see `registrar` and then under `enrollId` will be `enrollSecret`. Copy this secret, we will need it for the next step for creating a business network card for the certificate authority (CA)
 ![](images/connection.gif)
 
 ## 4. Use secret to get certificates from the certificate authority
@@ -156,13 +156,13 @@ composer network install --card adminCard --archiveFile global-citizens-network@
 ```
 >Note: If you get an error at this point, wait a minute and try again.
 
-2. Start the business network by providing the admin card, the path to the .bna file, and the credentials received from the CA. This command will issue a card which we will remove, called ‘delete_me.card’.
+2. Start the business network by providing the admin card, the path to the `.bna` file, and the credentials received from the CA. This command will issue a card which we will remove, called `delete_me.card`.
 ```bash
 composer network start --networkName global-citizens-network --networkVersion 0.0.1 -c adminCard -A admin -C ./credentials/admin-pub.pem -f delete_me.card
 ```
 >Note: If you get an error at this point, wait a minute and try again.
 
-3. Next, let’s delete delete_me.card :
+3. Next, let’s delete `delete_me.card` :
 ```bash
 rm delete_me.card
 ```
@@ -266,7 +266,7 @@ Submit `SendPledgeToGlobalCitizen` transaction to send the pledge to global citi
 Global Citizen participant registry gets update with the new pledge request.
 ![](images/17.png)
 
-Global Citizen reviews the pledge. After successful verification it submits a`SendPledgeToGovOrg` transaction to get funds for the project pledge from government organizations.
+Global Citizen reviews the pledge. After successful verification it submits a `SendPledgeToGovOrg` transaction to get funds for the project pledge from government organizations.
 ```
 {
   "$class": "org.global.citizens.net.SendPledgeToGovOrg",
